@@ -6,7 +6,6 @@ import pandas as pd
 import pyfiglet
 from pyfiglet import Figlet
 import matplotlib.pylab as plt
-from termcolor import colored, cprint
 from wordcloud import WordCloud, STOPWORDS
 from PIL import Image
 import numpy as np
@@ -31,22 +30,20 @@ class StartUp:
     def on_start_up(self):
         custom_fig = Figlet(font='big')
         application_name = custom_fig.renderText("Tweeting Mill")
-        color_font = self.color_font
         iteration = "v.0.1.0 - A Twitter CLI Tool"
         introductions = [application_name + '\n' + iteration]
         for introduction in introductions:
-            cprint(introduction, color_font)
+            print(introduction)
 
     def options(self):
         first_option = "0 - Return to the options page."
         second_option = "1 - Search up a twitter user and user's recent post."
         third_option = "2 - Create a data log to form a word cloud of recent tweets of a user."
         fourth_option = "3 - Exit program"
-        color_font = self.color_font
         option_lists = [first_option + "\n" + second_option +
                         "\n" + third_option + "\n" + fourth_option]
         for option in option_lists:
-            cprint(option,color_font)
+            print(option)
 
 
 class Tweeting_Mill:

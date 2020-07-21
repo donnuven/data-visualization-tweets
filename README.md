@@ -3,7 +3,7 @@
 ## Purpose summary:
 
 This project was made in terms of learning purposes on how to utilize data from a real-time feed found on a popular social platform and transforming
-that data set into a visualform of data. 
+that data set into a visual form of data. s
 
 ## Dependencies:
 This project requires a Twitter API key to gain access to the Twitter API in order to gain access to the data of the platform itself in order to 

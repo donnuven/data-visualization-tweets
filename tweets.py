@@ -94,7 +94,7 @@ class Tweeting_Mill:
         tweets.replace("https", " ").replace(
             "@", " ").replace("b'", " ").replace("RT", " ")
         twitter_mask = np.array(Image.open(
-            'C:\\Users\\danie\\pythonprojects\\tweeting_mill\\assets\\twitter.jpg'))
+            'C:\\path\\to\\your\\project\\assets\\twitter.jpg'))
 
         # generate word cloud
         wordcloud = WordCloud(width=1800, height=1400,

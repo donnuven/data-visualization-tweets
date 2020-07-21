@@ -91,8 +91,6 @@ class Tweeting_Mill:
         tweet_choice = int(input('tweet of choice(starting with 0 to nth):'))
         tweet_data.columns = ["tweet"]
         tweets = tweet_data.tweet[tweet_choice]
-        tweets.replace("https", " ").replace(
-            "@", " ").replace("b'", " ").replace("RT", " ")
         twitter_mask = np.array(Image.open('assets/twitter.jpg'))
 
         # generate word cloud

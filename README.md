@@ -11,7 +11,8 @@ run this data visualization tool.
 
 ## Additional File:
 For this project to run, make sure you store your keys from the Twitter API in the config file, after you register on Twitter site as a developer 
-to gain access to the Twitter API keys and tokens.
+to gain access to the Twitter API keys and tokens. Once those keys are in place, you should be able to use the standard way of running a python project
+by entering the following command into the current directory of the project in the terminal: ``python tweets.py``
 
 # Video Demonstration:
 

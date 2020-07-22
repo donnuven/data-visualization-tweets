@@ -9,7 +9,7 @@ import matplotlib.pylab as plt
 from wordcloud import WordCloud, STOPWORDS
 from PIL import Image
 import numpy as np
-import re
+
 
 # setup twitter authentication
 auth = tw.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)

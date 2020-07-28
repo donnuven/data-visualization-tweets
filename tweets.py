@@ -10,10 +10,7 @@ import numpy as np
 from options_page_support import*
 
 
-# setup twitter authentication
-auth = tw.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
-auth.set_access_token(OAUTH_TOKEN, OAUTH_TOKEN_SECRET)
-api = tw.API(auth)
+
 
 
 
@@ -21,10 +18,17 @@ class Tweeting_Mill:
     def __init__(self):
         self.screen_name = screen_name = str(input('twitter user:'))
         self.count = count = int(input('post count:'))
+        # attempts to authenticate twitter API
+        try:
+            self.auth = tw.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
+            self.auth.set_access_token(OAUTH_TOKEN, OAUTH_TOKEN_SECRET)
+            self.api = tw.API(self.auth)
+        except:
+            print("Error: Authentication Failed")
 
     # search up the most recent tweets from a user's timeline.
     def search_recent_tweet(self):
-        tweet_log = tw.Cursor(api.user_timeline, screen_name=self.screen_name,
+        tweet_log = tw.Cursor(self.api.user_timeline, screen_name=self.screen_name,
                               exclude_replies=True).items(self.count)
         for tweet in tweet_log:
             print(tweet.text, '----', tweet.created_at,
@@ -37,7 +41,7 @@ class Tweeting_Mill:
     # convert the most recent tweet of a user's timeline into a csv file
 
     def tweet_csv_conversion(self):
-        tweet_data = tw.Cursor(api.user_timeline, screen_name=self.screen_name,
+        tweet_data = tw.Cursor(self.api.user_timeline, screen_name=self.screen_name,
                                exclude_replies=True).items(self.count)
         file_name = str(input('csv file name:'))
 
